@@ -1,4 +1,4 @@
-package factory;
+	package factory;
 import java.util.*;
 import java.io.*;
 import java.awt.*;
@@ -139,7 +139,7 @@ public class LoggerFrame extends JFrame {
 	} 
 class ButtonHandler implements ActionListener {
 	  LoggerFrame objLoggerFrame;
-	  LoggerFactory factory = new LoggerFactory();
+	  LoggerFactory factory = new LoggerFactory();	
 	  public void actionPerformed(ActionEvent e) {
 	    String Result = null;
 	    if (e.getActionCommand().equals(LoggerFrame.EXIT)) {
