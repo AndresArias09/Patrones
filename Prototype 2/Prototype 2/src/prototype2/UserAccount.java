@@ -1,4 +1,4 @@
-package prototype2;
+	package prototype2;
 import java.io.*;
 import java.util.*;
 

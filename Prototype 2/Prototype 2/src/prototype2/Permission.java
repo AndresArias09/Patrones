@@ -1,4 +1,5 @@
 package prototype2;
+
 import java.util.*;
 
 public class Permission {

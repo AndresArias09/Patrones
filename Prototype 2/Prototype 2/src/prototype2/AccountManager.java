@@ -35,7 +35,7 @@ public class AccountManager {
     System.out.println(anotherSupervisor);
 
     UserAccount newAccountRep = factory.getAccountRep();
-    newAccountRep.setUserName("VKuchana");
+    newAccountRep.setUserName("	");
     newAccountRep.setPassword("Vishal");
     System.out.println(newAccountRep);
   }
@@ -46,8 +46,7 @@ public class AccountManager {
     try {
       File inFile = new File(fileName);
       BufferedReader br = new BufferedReader(
-                            new InputStreamReader(
-                              new FileInputStream(inFile)));
+                            new InputStreamReader(new FileInputStream(inFile)));
 
       while ((inputLine = br.readLine()) != null) {
         StringTokenizer st =
