@@ -1,7 +1,8 @@
+package iterator;
 import java.util.*;
 
 public class CertifiedCandidates implements Iterator {
-  private Vector v;
+  //private Vector v;
   AllCandidates ac;
   String certificationType;
   Candidate nextCandidate;

@@ -1,3 +1,4 @@
+package iterator;
 import java.io.*;
 import java.util.*;
 
@@ -79,9 +80,7 @@ public class FileUtil {
     String inputLine;
     try {
       File inFile = new File(fileName);
-      BufferedReader br = new BufferedReader(
-                            new InputStreamReader(
-                              new FileInputStream(inFile)));
+      BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(inFile)));
 
       while ((inputLine = br.readLine()) != null) {
         v.addElement(inputLine.trim());

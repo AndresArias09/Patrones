@@ -1,3 +1,4 @@
+package iterator;
 import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -7,11 +8,8 @@ import com.sun.java.swing.plaf.windows.*;
 
 public class SearchManager extends JFrame {
   public static final String newline = "\n";
-  public static final String GET_CANDIDATES = "Retrieve";
+  public static final String SHOW_ALL = "Show All";
   public static final String EXIT = "Exit";
-  public static final String SUN = "Sun MicroSystems";
-  public static final String MICROSOFT = "Microsoft";
-  public static final String IBM = "IBM";
 
   private JComboBox cmbCertificationType;
   private JPanel pSearchCriteria;
@@ -21,26 +19,19 @@ public class SearchManager extends JFrame {
     super("Iterator Pattern - Example");
 
     // Create controls
-    cmbCertificationType = new JComboBox();
     taSelectedCandidates = new JTextArea(15, 20);
     //taSelectedCandidates.setMargin(new Insets(1,1,1,1));
     taSelectedCandidates.setEditable(false);
 
     pSearchCriteria = new JPanel();
 
-    cmbCertificationType.addItem(SearchManager.SUN);
-    cmbCertificationType.addItem(SearchManager.MICROSOFT);
-    cmbCertificationType.addItem(SearchManager.IBM);
-
     //Create Labels
-    JLabel lblCertificationType =
-      new JLabel("Certification Type:");
-    JLabel lblSelectedCandidates = new JLabel("Results:");
+    JLabel lblSelectedCandidates = new JLabel("List :");
 
     //Create the open button
     JButton btnGetSelectedCandidates =
-      new JButton(SearchManager.GET_CANDIDATES);
-    btnGetSelectedCandidates.setMnemonic(KeyEvent.VK_R);
+      new JButton(SearchManager.SHOW_ALL);
+    btnGetSelectedCandidates.setMnemonic(KeyEvent.VK_S);
     JButton btnExit = new JButton(SearchManager.EXIT);
     btnExit.setMnemonic(KeyEvent.VK_X);
 
@@ -51,7 +42,6 @@ public class SearchManager extends JFrame {
 
     //For layout purposes, put the buttons in a separate panel
     JPanel buttonPanel = new JPanel();
-
     JPanel panel = new JPanel();
 
     GridBagLayout gridbag2 = new GridBagLayout();
@@ -68,13 +58,10 @@ public class SearchManager extends JFrame {
     gridbag2.setConstraints(btnExit, gbc2);
 
     //****************************************************
-
     GridBagLayout gridbag = new GridBagLayout();
     buttonPanel.setLayout(gridbag);
     GridBagConstraints gbc = new GridBagConstraints();
 
-    buttonPanel.add(lblCertificationType);
-    buttonPanel.add(cmbCertificationType);
     buttonPanel.add(lblSelectedCandidates);
     buttonPanel.add(taSelectedCandidates);
     buttonPanel.add(panel);
@@ -84,30 +71,22 @@ public class SearchManager extends JFrame {
     gbc.insets.left = 5;
     gbc.insets.right = 5;
 
-    gbc.gridx = 0;
-    gbc.gridy = 0;
-    gridbag.setConstraints(lblCertificationType, gbc);
-    gbc.anchor = GridBagConstraints.WEST;
-    gbc.gridx = 1;
-    gbc.gridy = 0;
-    gridbag.setConstraints(cmbCertificationType, gbc);
     gbc.anchor = GridBagConstraints.WEST;
     gbc.gridx = 0;
     gbc.gridy = 1;
     gridbag.setConstraints(lblSelectedCandidates, gbc);
 
     gbc.anchor = GridBagConstraints.WEST;
-    gbc.gridx = 1;
-    gbc.gridy = 1;
+    gbc.gridx = 0;
+    gbc.gridy = 2;
     gridbag.setConstraints(taSelectedCandidates, gbc);
 
     gbc.insets.left = 2;
     gbc.insets.right = 2;
     gbc.insets.top = 40;
-    gbc.gridx = 1;
+    gbc.gridx = 0;
     gbc.gridy = 6;
     gridbag.setConstraints(panel, gbc);
-
 
     //****************************************************
     //Add the buttons and the log to the frame
@@ -125,20 +104,12 @@ public class SearchManager extends JFrame {
   public static void main(String[] args) throws Exception {
 
     JFrame frame = new SearchManager();
-    frame.addWindowListener(new WindowAdapter() {
-          public void windowClosing(WindowEvent e) {
-            System.exit(0);
-          }
-        }
+    frame.addWindowListener(new WindowAdapter() { public void windowClosing(WindowEvent e) {System.exit(0);}}
                            );
 
     //frame.pack();
     frame.setSize(600, 500);
     frame.setVisible(true);
-  }
-
-  public String getCertificationType() {
-    return (String) cmbCertificationType.getSelectedItem();
   }
   public void setSelectedCandidates(String selectedCandidates) {
     taSelectedCandidates.setText(selectedCandidates);
@@ -152,21 +123,18 @@ class buttonHandler implements ActionListener {
     if (e.getActionCommand().equals(SearchManager.EXIT)) {
       System.exit(1);
     }
-    if (e.getActionCommand().equals(
-          SearchManager.GET_CANDIDATES)) {
-      String selection = manager.getCertificationType();
+    if (e.getActionCommand().equals(SearchManager.SHOW_ALL)) {
       AllCandidates ac = new AllCandidates();
-      Iterator certCandidates =
-        ac.getCertifiedCandidates(selection);
       String selectedCandidates =
         "Name --- Cert Type --- Location" + "\n" + 
           "--------------------------------------";
 
-      while (certCandidates.hasNext()) {
-        Candidate c = (Candidate) certCandidates.next();
+      while (ac.hasNext()) {
+        Candidate c = (Candidate) ac.next();
         selectedCandidates = selectedCandidates + "\n" +
-            c.getName() + " - " + c.getCertificationType() + 
-              " - " + c.getLocation();
+            c.getName() + " - " +
+            c.getCertificationType() + " - " +
+            c.getLocation();
       }
       manager.setSelectedCandidates(selectedCandidates);
     }

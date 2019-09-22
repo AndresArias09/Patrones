@@ -1,3 +1,4 @@
+package iterator;
 public class Candidate {
   private String name;
   private String certificationType;

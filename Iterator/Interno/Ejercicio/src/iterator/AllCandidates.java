@@ -1,3 +1,4 @@
+package iterator;
 import java.io.*;
 import java.util.*;
 
@@ -22,9 +23,7 @@ public class AllCandidates implements Iterator {
     for (int i = 0; i < dataLines.size(); i++) {
       String str = (String) dataLines.elementAt(i);
       StringTokenizer st = new StringTokenizer(str, ",");
-      data.add(
-        new Candidate(st.nextToken(), st.nextToken(),
-                      st.nextToken()));
+      data.add(new Candidate(st.nextToken(), st.nextToken(),st.nextToken()));
     }
   }
 
