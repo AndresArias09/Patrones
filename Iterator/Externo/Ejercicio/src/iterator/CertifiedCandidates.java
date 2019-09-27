@@ -19,8 +19,7 @@ public class CertifiedCandidates implements Iterator {
     boolean matchFound = false;
     while (ec.hasMoreElements()) {
       Candidate tempObj = (Candidate) ec.nextElement();
-      if (tempObj.getCertificationType().equals(
-            certificationType)) {
+      if (tempObj.getCertificationType().equals(certificationType)) {
         matchFound = true;
         nextCandidate = tempObj;
         break;
