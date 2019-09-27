@@ -1,5 +1,5 @@
 ////Adaptado del ejemplo en https://dzone.com/articles/the-flyweight-pattern. "The Flyweight Pattern by John Thompson. Apr. 13 / 2016package guru.springframework.gof.flyweight;
-
+package flyweight;
 public class CarreraCliente {
 
     private AutoCarreras auto;

@@ -1,3 +1,4 @@
+package flyweight;
 import java.util.*;
 
 // singleton Flyweight Factory
@@ -15,6 +16,7 @@ public class FlyweightFactory {
     if (lstFlyweight.get(divisionName) == null) {
       FlyweightIntr fw = new Flyweight(divisionName);
       lstFlyweight.put(divisionName, fw);
+      System.out.println(fw == null);
       return fw;
     } else {
       return (FlyweightIntr) lstFlyweight.get(divisionName);
@@ -74,6 +76,14 @@ public class FlyweightFactory {
     }
     public String getZip() {
       return zip;
+    }
+
+    public void print(String name, String title) {
+      System.out.println(name);
+      System.out.println(title);
+      System.out.println(getAddress() + "-" + getCity() +
+                         "-" + getState() + "-" + getZip());
+      System.out.println("----------------");
     }
 
   }// end of Flyweight

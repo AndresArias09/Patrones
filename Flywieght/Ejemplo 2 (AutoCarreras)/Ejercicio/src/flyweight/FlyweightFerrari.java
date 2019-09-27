@@ -1,5 +1,5 @@
 ////Adaptado del ejemplo en https://dzone.com/articles/the-flyweight-pattern. "The Flyweight Pattern by John Thompson. Apr. 13 / 2016
-
+package flyweight;
 public class FlyweightFerrari extends AutoCarreras {
 
     /*Hace el conteo del número de objetos "Flyweight" obtenidos*/

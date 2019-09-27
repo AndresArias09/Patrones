@@ -1,3 +1,4 @@
+package flyweight;
 import java.io.*;
 import java.util.*;
 

@@ -1,3 +1,4 @@
+package flyweight;
 public class VCard {
 
   String name;

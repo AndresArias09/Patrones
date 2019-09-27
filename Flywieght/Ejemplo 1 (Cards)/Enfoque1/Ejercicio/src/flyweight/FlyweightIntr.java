@@ -1,3 +1,4 @@
+package flyweight;
 public interface FlyweightIntr {
   public String getCompany();
   public String getAddress();
