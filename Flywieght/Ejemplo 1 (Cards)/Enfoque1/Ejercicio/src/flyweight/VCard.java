@@ -14,10 +14,7 @@ public class VCard {
   public void print() {
     System.out.println(name);
     System.out.println(title);
-    System.out.println(objFW.getAddress() + "-" +
-                       objFW.getCity() + "-" + 
-                       objFW.getState() + "-" +
-                       objFW.getZip());
+    System.out.println(objFW.getAddress() + "-" +objFW.getCity() + "-" + objFW.getState() + "-" +objFW.getZip());
     System.out.println("----------------");
   }
 
