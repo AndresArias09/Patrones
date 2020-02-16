@@ -7,8 +7,7 @@ public class LoggerFactory {
   public boolean isFileLoggingEnabled() {
     Properties p = new Properties();
     try {
-      p.load(ClassLoader.getSystemResourceAsStream(
-        "Logger.properties"));
+      p.load(ClassLoader.getSystemResourceAsStream("Logger.properties"));
       String fileLoggingValue =
         p.getProperty("FileLogging");
       if (fileLoggingValue.equalsIgnoreCase("ON") == true)
