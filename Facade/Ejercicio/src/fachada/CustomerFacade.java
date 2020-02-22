@@ -73,8 +73,7 @@ public class CustomerFacade {
       return false;
     }
 
-    if (objAddress.save() && objAccount.save() &&
-        objCreditCard.save()) {
+    if (objAddress.save() && objAccount.save() && objCreditCard.save()) {
 
       return true;
     } else {

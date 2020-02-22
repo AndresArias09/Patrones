@@ -225,11 +225,7 @@ public class AccountManager extends JFrame {
   public static void main(String[] args) {
     JFrame frame = new AccountManager();
 
-    frame.addWindowListener(new WindowAdapter() {
-          public void windowClosing(WindowEvent e) {
-            System.exit(0);
-          }
-        }
+    frame.addWindowListener(new WindowAdapter() {public void windowClosing(WindowEvent e) {System.exit(0);}}
                            );
 
     //frame.pack();
@@ -247,8 +243,7 @@ class ButtonHandler implements ActionListener {
     if (e.getActionCommand().equals(AccountManager.EXIT)) {
       System.exit(1);
     }
-    if (e.getActionCommand().equals(
-          AccountManager.VALIDATE_SAVE)) {
+    if (e.getActionCommand().equals(AccountManager.VALIDATE_SAVE)) {
       //get input values
       String firstName = objAccountManager.getFirstName();
       String lastName = objAccountManager.getLastName();
@@ -256,8 +251,7 @@ class ButtonHandler implements ActionListener {
       String city = objAccountManager.getCity();
       String state = objAccountManager.getAddrState();
       String cardType = objAccountManager.getCardType();
-      String cardNumber =
-        objAccountManager.getCardNumber();
+      String cardNumber = objAccountManager.getCardNumber();
       String cardExpDate = objAccountManager.getExpDate();
 
       // Create a facade instance
@@ -275,12 +269,10 @@ class ButtonHandler implements ActionListener {
       boolean result = facade.saveCustomerData();
 
       if (result) {
-        validateCheckResult = 
-		  " Valid Customer Data: Data Saved Successfully ";
+        validateCheckResult = " Valid Customer Data: Data Saved Successfully ";
 
       } else {
-        validateCheckResult = 
-          " Invalid Customer Data: Data Could Not Be Saved ";
+        validateCheckResult = " Invalid Customer Data: Data Could Not Be Saved ";
 
       }
 
