@@ -1,3 +1,4 @@
+package observer;
 public class SupervisorView {
   public static final String NEWLINE = "\n";
   public static final String SET_MONTH = "Set Month";
