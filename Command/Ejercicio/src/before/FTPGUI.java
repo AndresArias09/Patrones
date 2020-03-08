@@ -170,12 +170,7 @@ public class FTPGUI extends JFrame {
   public static void main(String[] args) throws Exception {
 
     JFrame frame = new FTPGUI();
-    frame.addWindowListener(new WindowAdapter() {
-          public void windowClosing(WindowEvent e) {
-            System.exit(0);
-          }
-        }
-                           );
+    frame.addWindowListener(new WindowAdapter() {public void windowClosing(WindowEvent e) {System.exit(0);}});
 
     //frame.pack();
     frame.setSize(450, 300);
