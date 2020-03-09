@@ -109,8 +109,7 @@ public class ReportManager extends JFrame
   public void notifyObservers() {
     // Send notify to all Observers
     for (int i = 0; i < observersList.size(); i++) {
-      Observer observer =
-        (Observer) observersList.elementAt(i);
+      Observer observer = (Observer) observersList.elementAt(i);
       observer.refreshData(this);
     }
   }
@@ -130,8 +129,7 @@ public class ReportManager extends JFrame
         System.exit(1);
       }
       if (e.getActionCommand().equals(ReportManager.SET_OK)) {
-        String dept = (String)
-                      cmbDepartmentList.getSelectedItem();
+        String dept = (String) cmbDepartmentList.getSelectedItem();
         //change in state
         subject.setDepartment(dept);
         subject.notifyObservers();

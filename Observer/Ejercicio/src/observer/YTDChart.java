@@ -17,6 +17,7 @@ public class YTDChart extends JFrame implements Observer {
 
   public YTDChart(ReportManager inp_objReportManager)
   throws Exception {
+	
     super("Observer Pattern - Example");
     objReportManager = inp_objReportManager;
 
@@ -72,8 +73,7 @@ public class YTDChart extends JFrame implements Observer {
         if (totals[i] > 0) {
           w = (int)(totals[i] / 50);
           g.fillRect(x, y, w, h);
-          g.drawString ("$" + totals[i], x + w + 5,
-                        y + 15);
+          g.drawString ("$" + totals[i], x + w + 5,y + 15);
         }
         y = y + 30;
       }
@@ -82,8 +82,7 @@ public class YTDChart extends JFrame implements Observer {
   }
 
   private void plotMonths(Graphics g) {
-    if ((department != null) &&
-        (department.trim().length() > 0)) {
+    if ((department != null) &&(department.trim().length() > 0)) {
       g.drawString(department + " YTD Report",150, 50);
     } else {
       g.drawString(department + "YTD Report",150, 50);
@@ -101,8 +100,7 @@ public class YTDChart extends JFrame implements Observer {
 
   }
   private int[] getYTDTotals(String department) {
-    int[] totals = {1000, 0, 2000, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0};
+    int[] totals = {1000, 0, 2000, 0, 0, 0, 0, 0, 0, 0, 0,0};
     for (int i = 0; i < 12; i++) {
       totals[i] = getMonthlyTotal(i + 1, department);
     }
