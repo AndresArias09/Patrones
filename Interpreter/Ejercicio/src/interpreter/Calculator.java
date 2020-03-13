@@ -20,11 +20,7 @@ public class Calculator {
     calc.setContext(ctx);
 
     //Display the result
-    System.out.println(" Variable Values: " + 
-                       "a=" + ctx.getValue("a") + 
-                       ", b=" + ctx.getValue("b") +
-                       ", c=" + ctx.getValue("c") + 
-                       ", d=" + ctx.getValue("d"));
+    System.out.println(" Variable Values: " + "a=" + ctx.getValue("a") + ", b=" + ctx.getValue("b") +", c=" + ctx.getValue("c") + ", d=" + ctx.getValue("d"));
     System.out.println(" Expression = (a+b)*(c-d)");
     System.out.println(" Result = " + calc.evaluate());
   }
