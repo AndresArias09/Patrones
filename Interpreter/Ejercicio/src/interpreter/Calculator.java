@@ -95,9 +95,8 @@ public class Calculator {
 
       String currChar = str.substring(i, i + 1);
 
-      if ((isOperator(currChar) == false) &&
-          (!currChar.equals("(")) &&
-          (!currChar.equals(")"))) {
+      if ((isOperator(currChar) == false) &&(!currChar.equals("(")) &&
+(!currChar.equals(")"))) {
         pfExpr = pfExpr + currChar;
       }
       if (currChar.equals("(")) {
