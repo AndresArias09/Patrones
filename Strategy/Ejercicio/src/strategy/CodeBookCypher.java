@@ -1,3 +1,4 @@
+package strategy;
 import java.util.*;
 
 public class CodeBookCypher implements EncryptionStrategy {
@@ -22,8 +23,7 @@ public class CodeBookCypher implements EncryptionStrategy {
 
     StringTokenizer st = new StringTokenizer(inputData);
     while (st.hasMoreTokens()) {
-      outStr = outStr + " " +
-               codeContents.get(st.nextToken());
+      outStr = outStr + " " +codeContents.get(st.nextToken());
     }
 
     return new String(outStr);

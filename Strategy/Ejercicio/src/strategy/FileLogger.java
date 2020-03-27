@@ -1,3 +1,4 @@
+package strategy;
 public class FileLogger {
 
   public void log(String fileName, String msg) {

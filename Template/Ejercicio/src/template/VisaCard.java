@@ -1,3 +1,4 @@
+package template;
 import java.util.*;
 
 public class VisaCard extends CreditCard {

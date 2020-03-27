@@ -1,3 +1,4 @@
+package strategy;
 public class SubstitutionCypher implements EncryptionStrategy {
 
   char[] source = {'a','b','c','d','e','f','g','h','i','j','k',

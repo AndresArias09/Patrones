@@ -1,3 +1,4 @@
+package strategy;
 public class SimpleEncryption implements EncryptionStrategy {
 
   public String encrypt(String inputData) {

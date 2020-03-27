@@ -1,3 +1,4 @@
+package strategy;
 public class CaesarCypher implements EncryptionStrategy {
 
   public String encrypt(String inputData) {

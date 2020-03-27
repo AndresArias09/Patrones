@@ -1,13 +1,14 @@
+package template;
 import java.util.*;
 
-public class MasterCard extends CreditCard {
+public class DinersCard extends CreditCard {
 
-  public MasterCard(String num, int expMonth, int expYear) {
+  public DinersCard(String num, int expMonth, int expYear) {
     super(num, expMonth, expYear);
   }
 
   public boolean isNumOfDigitsValid() {
-    if (cardNum.length() == 16) {
+    if (cardNum.length() == 14) {
       return true;
     } else {
       return false;
@@ -16,10 +17,10 @@ public class MasterCard extends CreditCard {
   public boolean isValidPrefix() {
     String prefix = cardNum.substring(0, 1);
     String nextChar = cardNum.substring(1, 2);
-    String validChars = "12345";
+    String validChars = "068";
 
     //51-55
-    if ((prefix.equals("5")) &&
+    if ((prefix.equals("3")) &&
         (validChars.indexOf(nextChar) >= 0)) {
       return true;
     } else {
@@ -28,7 +29,7 @@ public class MasterCard extends CreditCard {
   }
   public boolean isAccountInGoodStand() {
     /*
-     	Make necessary MASTER CARD API calls to
+     	Make necessary DINERS CARD API calls to
      	perform other checks.
      */
     return true;
