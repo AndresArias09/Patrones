@@ -8,8 +8,7 @@ public class VisaCard extends CreditCard {
   }
 
   public boolean isNumOfDigitsValid() {
-    if ((cardNum.length() == 13) ||
-        (cardNum.length() == 16)) {
+    if ((cardNum.length() == 13) ||(cardNum.length() == 16)) {
       return true;
     } else {
       return false;

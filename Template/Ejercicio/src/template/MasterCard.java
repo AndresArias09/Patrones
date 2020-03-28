@@ -20,8 +20,7 @@ public class MasterCard extends CreditCard {
     String validChars = "12345";
 
     //51-55
-    if ((prefix.equals("5")) &&
-        (validChars.indexOf(nextChar) >= 0)) {
+    if ((prefix.equals("5")) &&(validChars.indexOf(nextChar) >= 0)) {
       return true;
     } else {
       return false;

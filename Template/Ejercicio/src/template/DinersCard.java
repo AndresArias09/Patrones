@@ -20,8 +20,7 @@ public class DinersCard extends CreditCard {
     String validChars = "068";
 
     //51-55
-    if ((prefix.equals("3")) &&
-        (validChars.indexOf(nextChar) >= 0)) {
+    if ((prefix.equals("3")) &&(validChars.indexOf(nextChar) >= 0)) {
       return true;
     } else {
       return false;

@@ -17,8 +17,7 @@ public abstract class CreditCard {
     int mm = cal.get(Calendar.MONTH) + 1;
     int yy = cal.get(Calendar.YEAR);
 
-    boolean result =
-      (yy > expYY) || ((yy == expYY) && (mm > expMM));
+    boolean result =(yy > expYY) || ((yy == expYY) && (mm > expMM));
 
     return (!result);
   }
@@ -28,8 +27,7 @@ public abstract class CreditCard {
     boolean result = true;
 
     for (int i = 0; i < cardNum.length(); i++) {
-      if (validChars.indexOf(cardNum.substring(i, i + 1)) <
-          0) {
+      if (validChars.indexOf(cardNum.substring(i, i + 1)) <0) {
         result = false;
         break;
       }
@@ -45,10 +43,8 @@ public abstract class CreditCard {
     int strLen = cardNum.length();
 
     for (int i = 0; i < strLen; i++) {
-      String digit = cardNum.substring(strLen - i - 1,
-                     strLen - i);
-      int currProduct =
-        new Integer(digit).intValue() * multiplier;
+      String digit = cardNum.substring(strLen - i - 1,strLen - i);
+      int currProduct =new Integer(digit).intValue() * multiplier;
       if (currProduct >= 10)
         sum += (currProduct % 10) + 1;
       else
