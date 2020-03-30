@@ -18,7 +18,7 @@ public class MemberTransaction extends Thread {
     item.getStatus(name);
 
     if (operation.equals("CheckOut")) {
-      System.out.println("\n" + name +" is ready to checkout the item.");
+    	FileLogger.getFileLogger().log("\n" + name +" is ready to checkout the item.");
       item.checkOut(name);
       try {
         sleep(1);

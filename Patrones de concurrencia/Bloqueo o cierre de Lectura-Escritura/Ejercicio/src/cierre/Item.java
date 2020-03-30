@@ -15,13 +15,13 @@ public class Item {
   public void checkOut(String member) {
     rwLock.getWriteLock();
     status = "Y";
-    System.out.println(member +" has been issued a write lock-ChkOut");
+    FileLogger.getFileLogger().log(member +" has been issued a write lock-ChkOut");
     rwLock.done();
   }
 
   public String getStatus(String member) {
     rwLock.getReadLock();
-    System.out.println(member +" has been issued a read lock");
+    FileLogger.getFileLogger().log(member +" has been issued a read lock");
     rwLock.done();
     return status;
   }
@@ -29,7 +29,7 @@ public class Item {
   public void checkIn(String member) {
     rwLock.getWriteLock();
     status = "N";
-    System.out.println(member +" has been issued a write lock-ChkIn");
+    FileLogger.getFileLogger().log(member +" has been issued a write lock-ChkIn");
     rwLock.done();
   }
 }

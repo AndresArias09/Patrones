@@ -5,13 +5,9 @@ public class Client {
 	public static void main(String[] args) {
 		Directory dir1 = new Directory("/home/user1/Destkop/Tests");
 		Directory dir2 = new Directory("/home/user1/Destkop/Notes");
-		Directory dir3 = new Directory("/home/user1/Destkop/Results");
 		
-		FileSysUtil_Rev fsutil = new FileSysUtil_Rev();
-		fsutil.moveContents(dir1, dir3);
-		fsutil.moveContents(dir2, dir3);
-
-
+		Tester t1 = new Tester(dir1, dir2);
+		Tester t2 = new Tester(dir2, dir1);
 	}
 
 }

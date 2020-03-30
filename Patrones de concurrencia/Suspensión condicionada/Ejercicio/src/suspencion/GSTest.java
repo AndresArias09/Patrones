@@ -18,19 +18,19 @@ public class GSTest {
   public synchronized void park(String member) {
     while (totalParkedCars >= MAX_CAPACITY) {
       try {
-        System.out.println(" The parking lot is full " +member + " has to wait ");
+    	FileLogger.getFileLogger().log(" The parking lot is full " +member + " has to wait ");
         wait();
       } catch (InterruptedException e) {
         //
       }
     }
     //precondition is true
-    System.out.println(member + " has parked");
+    FileLogger.getFileLogger().log(member + " has parked");
     totalParkedCars = totalParkedCars + 1;
   }
   public synchronized void leave(String member) {
     totalParkedCars = totalParkedCars - 1;
-    System.out.println(member +" has left, notify a waiting member");
+    FileLogger.getFileLogger().log(member +" has left, notify a waiting member");
     notify();
   }
 }
@@ -45,7 +45,7 @@ class Member extends Thread {
     start();
   }
   public void run() {
-    System.out.println(name + " is ready to park");
+	FileLogger.getFileLogger().log(name + " is ready to park");
     parking.park(name);
     try {
       sleep(500);

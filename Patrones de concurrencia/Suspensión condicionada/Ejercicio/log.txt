@@ -1,0 +1,21 @@
+
+Member4 is ready to park
+Member6 is ready to park
+Member1 is ready to park
+Member5 is ready to park
+Member2 is ready to park
+Member3 is ready to park
+Member4 has parked
+Member3 has parked
+Member2 has parked
+Member5 has parked
+ The parking lot is full Member1 has to wait 
+ The parking lot is full Member6 has to wait 
+Member4 has left, notify a waiting member
+Member1 has parked
+Member3 has left, notify a waiting member
+Member5 has left, notify a waiting member
+Member2 has left, notify a waiting member
+Member6 has parked
+Member1 has left, notify a waiting member
+Member6 has left, notify a waiting member

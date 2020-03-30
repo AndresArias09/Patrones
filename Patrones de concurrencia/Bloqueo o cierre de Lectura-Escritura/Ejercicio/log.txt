@@ -1,0 +1,19 @@
+
+Member4 has been issued a read lock
+Member5 has been issued a read lock
+Member2 has been issued a read lock
+Member1 has been issued a read lock
+Member6 has been issued a read lock
+Member3 has been issued a read lock
+
+Member5 is ready to checkout the item.
+
+Member4 is ready to checkout the item.
+Member5 has been issued a write lock-ChkOut
+
+Member3 is ready to checkout the item.
+Member4 has been issued a write lock-ChkOut
+Member3 has been issued a write lock-ChkOut
+Member4 has been issued a write lock-ChkIn
+Member3 has been issued a write lock-ChkIn
+Member5 has been issued a write lock-ChkIn

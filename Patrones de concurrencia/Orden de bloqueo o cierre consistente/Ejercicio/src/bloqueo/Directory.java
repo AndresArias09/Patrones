@@ -6,4 +6,8 @@ public class Directory {
   public Directory(String n) {
     name = n;
   }
+  
+  public String getName() {
+	  return name;
+  }
 }
